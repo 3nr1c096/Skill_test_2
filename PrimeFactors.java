@@ -12,13 +12,11 @@ public class PrimeFactors {
 		int n = sc.nextInt();
 		sc.close();
 		int x = n / 2;
-		for(int i = 2; i <= x; i++)
+		for(int i = 2; i <= x && n > 1; i++)
 			if(n % i == 0) {
 				v = Arrays.copyOf(v, v.length + 1);
 				v[v.length - 1] = i;
 				n /= i;
-				if(n == 1)
-					break;
 				i--;
 			}
 		System.out.println(Arrays.toString(v));
